@@ -1,0 +1,196 @@
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+/* Main Content */
+.container-fluid {
+    flex: 1;
+}
+
+/* Map Container */
+#temperature-map {
+    height: 400px;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Chart Container */
+#temperature-chart {
+    height: 250px;
+    width: 100%;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+/* Form Controls */
+.form-range::-webkit-slider-thumb {
+    background: var(--primary-color);
+    width: 18px;
+    height: 18px;
+}
+
+.form-range::-moz-range-thumb {
+    background: var(--primary-color);
+    width: 18px;
+    height: 18px;
+}
+
+.form-range::-ms-thumb {
+    background: var(--primary-color);
+    width: 18px;
+    height: 18px;
+}
+
+.form-range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline-secondary {
+    border-color: #ddd;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+}
+
+/* Slider Labels */
+.d-flex.justify-content-between small {
+    color: #6c757d;
+    font-size: 0.75rem;
+}
+
+/* Footer */
+footer {
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    #temperature-map {
+        height: 300px;
+    }
+    
+    .col-lg-8, .col-lg-4 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #temperature-map {
+        height: 250px;
+    }
+    
+    #temperature-chart {
+        height: 200px;
+    }
+}
+
+/* Animation for loading state */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Tooltip styling */
+.tooltip-inner {
+    background-color: var(--secondary-color);
+    font-size: 0.875rem;
+}
+
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
+.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--secondary-color);
+}
+
+/* Legend styles */
+.legend {
+    padding: 6px 8px;
+    background: white;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+/* Temperature color scale */
+.temp-scale {
+    background: linear-gradient(to right, #2c7bb6, #00a6ca, #66c1a4, #abdda4, #e6f598, #ffffbf, #fee08b, #fdae61, #f46d43, #d53e4f, #9e0142);
+    height: 20px;
+    border-radius: 4px;
+    margin: 5px 0;
+}
